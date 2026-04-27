@@ -1,0 +1,100 @@
+.testimonials-luxury {
+    padding: 80px 5%;
+    background-color: #f8faff;
+    overflow: hidden;
+}
+
+.testi-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.testi-header-center { text-align: center; margin-bottom: 50px; }
+.gold-tag { color: #0044ff; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; }
+.title-premium { font-size: clamp(28px, 4vw, 38px); font-weight: 900; margin-top: 10px; }
+.title-premium span { color: #0044ff; }
+.header-line-blue { width: 50px; height: 4px; background: #0044ff; margin: 15px auto; border-radius: 10px; }
+
+.carousel-view-port { width: 100%; }
+
+.carousel-track-flex {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.testi-slide {
+    min-width: 33.333%; /* 3 cards per view on desktop */
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.luxury-glass-card {
+    background: #ffffff;
+    border-radius: 40px;
+    padding: 40px;
+    height: 100%;
+    border: 1px solid #eef2ff;
+    box-shadow: 0 10px 30px rgba(0, 68, 255, 0.04);
+    position: relative;
+    transition: 0.4s;
+}
+
+.luxury-glass-card:hover {
+    transform: translateY(-8px);
+    border-color: #0044ff;
+}
+
+.avatar-letter {
+    width: 50px; height: 50px;
+    background: #0044ff;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.stars-wrap { color: #ffc107; font-size: 12px; }
+.feedback-text { font-size: 15px; color: #555; line-height: 1.7; margin: 25px 0; font-style: italic; }
+.author-name { font-size: 18px; font-weight: 800; color: #111; margin-bottom: 2px; }
+.author-role { font-size: 12px; color: #0044ff; font-weight: 700; text-transform: uppercase; }
+
+.card-bg-icon {
+    position: absolute; bottom: 25px; right: 30px;
+    font-size: 40px; color: rgba(0, 68, 255, 0.03);
+}
+
+/* --- NAVIGATION DOTS --- */
+.carousel-nav-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.nav-dot {
+    width: 10px; height: 10px;
+    background: #d1d9ff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-dot.active {
+    width: 30px;
+    background: #0044ff;
+    border-radius: 10px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1100px) {
+    .testi-slide { min-width: 50%; } /* 2 cards */
+}
+
+@media (max-width: 768px) {
+    .testi-slide { min-width: 100%; } /* 1 card */
+    .carousel-nav-dots { display: none; } /* Mobile par dots ki jagah swipe use hota hai usually, par aap chaho to dikha sakte ho */
+}

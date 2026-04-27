@@ -1,0 +1,109 @@
+.trust-section {
+    padding: 60px 5%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.trust-container {
+    width: 100%;
+    max-width: 1300px;
+}
+
+/* --- GIFT HAMPER BANNER --- */
+.gift-hamper-banner {
+    background: linear-gradient(135deg, #0044ff 0%, #002280 100%);
+    border-radius: 30px;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0, 68, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.gift-content { display: flex; align-items: center; gap: 20px; }
+.gift-icon { font-size: 40px; animation: bounce 2s infinite; }
+.gift-text h3 { font-size: 22px; font-weight: 800; margin-bottom: 5px; }
+.gift-text p { font-size: 15px; opacity: 0.9; }
+
+.premium-label {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- HEADER --- */
+.trust-header { text-align: center; margin-bottom: 50px; }
+.trust-title { font-size: clamp(26px, 4vw, 36px); font-weight: 800; color: #111; }
+.trust-title span { color: #0044ff; }
+.trust-subtitle { color: #777; font-size: 16px; margin-top: 10px; }
+
+/* --- PROMISES GRID --- */
+.promises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.promise-card {
+    background: #f8faff;
+    border: 1px solid #eef2ff;
+    padding: 30px;
+    border-radius: 35px; /* Big Rounded Corners */
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: 0.3s ease;
+}
+
+.promise-card:hover {
+    background: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 68, 255, 0.08);
+    border-color: #0044ff;
+}
+
+.promise-icon-box {
+    width: 55px;
+    height: 55px;
+    background: #0044ff;
+    color: white;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.promise-info h4 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.promise-info p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .gift-hamper-banner { flex-direction: column; text-align: center; gap: 15px; padding: 30px 20px; }
+    .gift-content { flex-direction: column; }
+    .promise-card { padding: 25px; }
+}
