@@ -1,128 +1,144 @@
-/* --- TERE EXISTING STYLES KE NICHE YE ADD KREIN --- */
-
-.booking-btn-group {
+.booking-section-white {
+    /* Padding-top ko 80px se kam karke 40px kar diya hai */
+    padding: 20px 5% 80px 5%; 
+    background-color: #f4f7ff; 
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 10px;
+    justify-content: center;
 }
 
-.pay-now-action-btn {
-    background: #2d3436; /* Professional Dark Gray/Black */
-    color: #fff;
-    padding: 18px 30px;
-    border-radius: 20px;
-    border: none;
-    font-size: 18px;
+.booking-container-new {
+    width: 100%;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* --- WHATSAPP CARD --- */
+.booking-card-white {
+    background: #ffffff;
+    border-radius: 50px;
+    /* Padding thodi adjust ki hai taaki card bulky na lage */
+    padding: 50px 40px; 
+    box-shadow: 0 20px 60px rgba(0, 68, 255, 0.08);
+    border: 1px solid #e1e8ff;
+    position: relative;
+    transition: 0.4s;
+}
+
+.status-badge-blue {
+    background: #eff4ff;
+    color: #0044ff;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 13px;
     font-weight: 700;
-    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    width: fit-content;
+    margin-bottom: 20px;
 }
 
-.pay-now-action-btn:hover {
-    background: #000;
-    transform: translateY(-3px);
+.live-dot-blue {
+    height: 10px; width: 10px;
+    background: #0044ff;
+    border-radius: 50%;
+    animation: pulse-blue 1.5s infinite;
 }
 
-/* Modal Overlay - Navbar Sticky hai isliye padding-top 80px rakhi hai */
-.token-modal-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 8, 28, 0.85);
-    backdrop-filter: blur(8px);
-    z-index: 9999; /* Taki Navbar ke upar dikhe */
+@keyframes pulse-blue { 
+    0% { transform: scale(0.9); opacity: 1; } 
+    70% { transform: scale(1.5); opacity: 0; } 
+    100% { transform: scale(0.9); opacity: 0; } 
+}
+
+.title-blue { 
+    font-size: clamp(28px, 4vw, 40px); /* Responsive Font */
+    color: #111; 
+    font-weight: 800; 
+    margin-bottom: 15px; 
+}
+
+.desc-gray { 
+    color: #666; 
+    font-size: 16px; 
+    line-height: 1.6; 
+    margin-bottom: 30px; 
+}
+
+.whatsapp-btn-premium {
+    background: #0044ff;
+    color: #fff !important;
+    padding: 18px 35px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Upar se start hoga scroll ke liye */
-    padding: 100px 20px 40px 20px; /* Navbar se gap */
-    overflow-y: auto;
+    align-items: center;
+    gap: 15px;
+    width: fit-content;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 68, 255, 0.2);
 }
 
-.token-modal-card {
-    background: #fff;
-    width: 100%;
-    max-width: 480px;
-    border-radius: 40px;
-    padding: 40px;
-    position: relative;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+.whatsapp-btn-premium:hover {
+    background: #0033cc;
+    transform: translateY(-5px);
 }
 
-.modal-close-x {
-    position: absolute;
-    top: 25px; right: 25px;
-    background: #f0f2f5; border: none;
-    width: 35px; height: 35px;
-    border-radius: 50%; cursor: pointer;
-    font-size: 20px; font-weight: bold;
+.reply-text { display: block; margin-top: 15px; color: #999; font-size: 13px; }
+
+/* --- SOCIAL CARDS --- */
+.social-column-white {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.fire-tag {
-    background: #fff5f5; color: #ff4757;
-    padding: 6px 15px; border-radius: 50px;
-    font-size: 12px; font-weight: 800;
-}
-
-.modal-promo-header h3 { margin: 15px 0 5px 0; font-size: 26px; color: #111; }
-.modal-promo-header p { color: #777; font-size: 15px; margin-bottom: 30px; }
-
-.token-price-box {
-    background: #f8faff;
-    border: 2px solid #eef2ff;
-    border-radius: 25px;
+.social-glass-card-white {
+    background: #ffffff;
+    border: 1px solid #eef2ff;
+    border-radius: 35px;
     padding: 25px;
-    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    transition: 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
-.price-row {
-    display: flex; justify-content: space-between;
-    align-items: center; border-bottom: 1px solid #e1e8ff;
-    padding-bottom: 15px; margin-bottom: 15px;
+.icon-circle-insta, .icon-circle-fb {
+    width: 60px; height: 60px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #fff;
 }
 
-.token-label { font-weight: 700; color: #111; }
-.strike { text-decoration: line-through; color: #a4b0be; margin-right: 10px; font-size: 16px; }
-.final { font-size: 24px; color: #0044ff; font-weight: 900; }
+.icon-circle-insta { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+.icon-circle-fb { background: #0044ff; }
 
-.token-perks p { font-size: 14px; color: #444; margin: 8px 0; display: flex; gap: 10px; align-items: center; }
-.token-perks i { color: #2ed573; font-size: 16px; }
+.social-content-white h3 { color: #111; font-size: 20px; margin-bottom: 3px; }
+.social-content-white p { color: #777; font-size: 13px; }
 
-.qr-container {
-    width: 160px; height: 160px;
-    background: #fff; border: 1px solid #ddd;
-    margin: 0 auto 15px; border-radius: 20px;
-    display: flex; align-items: center; justify-content: center;
+.arrow-icon { margin-left: auto; color: #ddd; transition: 0.3s; }
+
+.social-glass-card-white:hover {
+    transform: translateX(10px);
+    border-color: #0044ff;
+    box-shadow: 0 15px 40px rgba(0, 68, 255, 0.1);
 }
 
-.qr-placeholder { text-align: center; color: #ccc; }
-.qr-placeholder i { font-size: 50px; display: block; }
-
-.upi-info { text-align: center; }
-.upi-id-text { 
-    display: block; background: #f1f2f6; 
-    padding: 10px; border-radius: 10px;
-    font-family: monospace; font-size: 15px; margin: 10px 0;
-}
-
-.copy-btn-small {
-    background: none; border: none; color: #0044ff;
-    font-weight: 700; cursor: pointer; text-decoration: underline;
-}
-
-.secure-badge-footer {
-    text-align: center; margin-top: 30px;
-    font-size: 12px; color: #a4b0be;
-    border-top: 1px solid #f1f2f6; padding-top: 20px;
-}
-
-/* Mobile SEO Friendly */
-@media (max-width: 768px) {
-    .booking-btn-group { flex-direction: column; }
-    .whatsapp-btn-premium, .pay-now-action-btn { width: 100%; justify-content: center; }
-    .token-modal-card { padding: 30px 20px; border-radius: 30px; }
-    .token-modal-overlay { padding-top: 80px; } /* Mobile Navbar height */
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 992px) {
+    .booking-section-white { padding: 30px 5%; }
+    .booking-container-new { grid-template-columns: 1fr; gap: 30px; }
+    .title-blue { font-size: 28px; }
+    .booking-card-white { padding: 35px 25px; border-radius: 35px; }
 }
