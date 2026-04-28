@@ -41,7 +41,7 @@
         padding-left: 0; /* Left padding zero taaki screen space bache */
         justify-content: center; /* Phone pe center mein dikhega professional */
         gap: 15px; /* Elements ke beech ka gap kam kiya taaki sab fit ho jaye */
-        padding: 8px 10px;
+        padding: 11px 10px;
     }
 
     /* Email ki lambi ID mobile pe chhupa denge ya choti kar denge */

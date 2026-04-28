@@ -117,7 +117,7 @@
     .hamburger { display: block; }
     .nav-menu {
         position: absolute;
-        top: 100%;
+        top: 41px;
         right: -100%;
         flex-direction: column;
         background: #fff;
