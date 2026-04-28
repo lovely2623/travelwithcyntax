@@ -6,7 +6,7 @@ function ContactUs() {
     name: '',
     email: '',
     mobile: '',
-    tourPackage: '', // Updated from course
+    tourPackage: '',
     message: ''
   });
   const [loading, setLoading] = useState(false);
@@ -18,8 +18,8 @@ function ContactUs() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    
-    // Aapke Render Backend ka URL intact rakha hai
+
+    // 1. Backend Save Logic (Intact)
     try {
       const response = await fetch('https://cyntaxitinstitute.onrender.com/api/contact', {
         method: 'POST',
@@ -30,8 +30,24 @@ function ContactUs() {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        alert("Shukriya Mohit Sir! Booking Query save ho gayi hai. 🏔️");
+        // 2. WhatsApp Redirect Logic
+        const phoneNumber = "918988199226"; 
+        const messageText = `*Nayi Booking Inquiry आई है!* 🏔️%0A%0A` +
+          `*Naam:* ${formData.name}%0A` +
+          `*Email:* ${formData.email}%0A` +
+          `*Mobile:* ${formData.mobile}%0A` +
+          `*Package:* ${formData.tourPackage}%0A` +
+          `*Message:* ${formData.message}`;
+
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${messageText}`;
+        
+        alert("Shukriya Mohit Sir! Details save ho gayi hain. Ab aapko WhatsApp par redirect kiya ja raha hai.");
+        
+        // Reset Form
         setFormData({ name: '', email: '', mobile: '', tourPackage: '', message: '' });
+        
+        // Redirect to WhatsApp
+        window.open(whatsappURL, '_blank');
       } else {
         alert("Error: " + (result.error || "Data save nahi hua."));
       }
@@ -44,80 +60,99 @@ function ContactUs() {
 
   return (
     <div className="contact-travel-wrapper">
-      {/* 60px Navbar gap handle karne ke liye main container */}
-      
-      <section className="contact-hero">
-        <div className="hero-content">
-          <h1>Plan Your Next Adventure 🎒</h1>
-          <p>Humse baat karein aur apni dream Himachal trip design karayein.</p>
+      {/* SEO Friendly Meta-like Structure */}
+      <section className="contact-hero" aria-labelledby="hero-title">
+        <div className="hero-content container">
+          <h1 id="hero-title">Plan Your Next Adventure 🎒</h1>
+          <p>Himachal ki haseen vadiyon mein apna dream trip design karayein Mohit Sir ke saath.</p>
         </div>
       </section>
 
-      <div className="contact-main-grid container">
-        
+      <main className="contact-main-grid container">
         {/* Left Side: Contact Cards */}
         <aside className="contact-info-panel">
-          <div className="c-card">
-            <div className="c-icon">📞</div>
-            <h3>Call/WhatsApp</h3>
-            <p>Direct contact with Mohit Sir:</p>
-            <a href="https://wa.me/918988199226">+91 89881 99226</a>
+          <div className="c-card" role="complementary">
+            <div className="c-icon" aria-hidden="true">📞</div>
+            <h3>Call / WhatsApp</h3>
+            <p>Direct support for your trip:</p>
+            <a href="https://wa.me/918988199226" aria-label="Contact on WhatsApp">+91 89881 99226</a>
           </div>
 
-          <div className="c-card">
-            <div className="c-icon">📧</div>
+          <div className="c-card" role="complementary">
+            <div className="c-icon" aria-hidden="true">📧</div>
             <h3>Email Address</h3>
-            <p>For group booking queries:</p>
+            <p>Group booking inquiries:</p>
             <a href="mailto:info@travelwithcyntax.com">info@travelwithcyntax.com</a>
           </div>
 
-          <div className="c-card">
-            <div className="c-icon">📍</div>
+          <div className="c-card" role="complementary">
+            <div className="c-icon" aria-hidden="true">📍</div>
             <h3>Our Base</h3>
             <p>Shimla & Solan, Himachal Pradesh</p>
           </div>
         </aside>
 
         {/* Right Side: Travel Form */}
-        <div className="contact-form-container">
+        <section className="contact-form-container">
           <h2>Send Booking Inquiry</h2>
           <form onSubmit={handleSubmit} className="travel-form">
             <div className="form-row">
-              <input type="text" name="name" placeholder="Aapka Naam" value={formData.name} onChange={handleChange} required />
-              <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required />
+              <input 
+                type="text" name="name" placeholder="Aapka Naam" 
+                value={formData.name} onChange={handleChange} required 
+                aria-label="Full Name"
+              />
+              <input 
+                type="email" name="email" placeholder="Email Address" 
+                value={formData.email} onChange={handleChange} required 
+                aria-label="Email Address"
+              />
             </div>
             
-            <input type="text" name="mobile" placeholder="Mobile Number" value={formData.mobile} onChange={handleChange} required />
+            <input 
+              type="tel" name="mobile" placeholder="Mobile Number" 
+              value={formData.mobile} onChange={handleChange} required 
+              aria-label="Mobile Number"
+            />
             
-            <select name="tourPackage" value={formData.tourPackage} onChange={handleChange} required>
+            <select 
+              name="tourPackage" value={formData.tourPackage} 
+              onChange={handleChange} required aria-label="Select Tour Package"
+            >
               <option value="">Choose Your Vibe</option>
-              <option value="honeymoon">Honeymoon Special (Shimla/Manali)</option>
-              <option value="family">Family Adventure (Dharamshala/Dalhousie)</option>
-              <option value="spiritual">Shaktipeeth Darshan</option>
-              <option value="offbeat">Chanshal / Dodra-Kawar Offbeat</option>
-              <option value="spiti">Spiti Valley Expedition</option>
+              <option value="Honeymoon Special">Honeymoon Special (Shimla/Manali)</option>
+              <option value="Family Adventure">Family Adventure (Dharamshala/Dalhousie)</option>
+              <option value="Spiritual Shaktipeeth">Shaktipeeth Darshan</option>
+              <option value="Offbeat Chanshal">Chanshal / Dodra-Kawar Offbeat</option>
+              <option value="Spiti Valley">Spiti Valley Expedition</option>
             </select>
 
-            <textarea name="message" placeholder="Aapki koi special requirement? (e.g. No. of days, Date of travel)" rows="4" value={formData.message} onChange={handleChange}></textarea>
+            <textarea 
+              name="message" 
+              placeholder="Aapki koi special requirement? (e.g. No. of days, Date of travel)" 
+              rows="4" value={formData.message} 
+              onChange={handleChange}
+              aria-label="Special Requirements"
+            ></textarea>
             
             <button type="submit" className="wa-submit-btn" disabled={loading}>
-              {loading ? "Sending..." : "Submit Inquiry 🚀"}
+              {loading ? "Processing..." : "Submit & Message on WhatsApp 🚀"}
             </button>
           </form>
-        </div>
-      </div>
+        </section>
+      </main>
 
-      <div className="google-map-wrap">
+      <section className="google-map-wrap" aria-label="Office Location">
          <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.2223842603416!2d77.10896!3d30.91!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDU0JzM2LjAiTiA3N8KwMDYnMzIuMyJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
-              width="100%" 
-              height="150" 
-              style={{ border: 0 }} 
-              allowFullScreen="" 
-              loading="lazy" 
-              title="Cyntax Location"
-            ></iframe>
-      </div>
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3416.123456789!2d77.1734!3d31.1048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDA2JzE3LjMiTiA3N8KwMTAnMjQuMiJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="350" 
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            title="Cyntax Location"
+          ></iframe>
+      </section>
     </div>
   );
 }
