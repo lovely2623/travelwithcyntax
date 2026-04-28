@@ -1,125 +1,112 @@
-/* Purane styles wese hi hain, ye naye additions hain */
-
-.booking-section-white {
-    flex-direction: column; /* Taaki portal niche aaye */
-    align-items: center;
-}
-
-/* Payment Card Styling */
-.payment-card-premium {
-    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-    border-radius: 35px;
-    padding: 30px;
-    color: white;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-.hot-deal-tag {
-    background: #ff3e3e;
-    font-size: 10px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    text-transform: uppercase;
-    font-weight: 800;
-}
-
-.payment-header h3 { font-size: 24px; margin: 10px 0; }
-
-.price-tag { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-.old-price { text-decoration: line-through; color: #999; font-size: 18px; }
-.new-price { font-size: 32px; font-weight: 800; color: #44ffaa; }
-
-.benefits-list { list-style: none; padding: 0; margin-bottom: 20px; }
-.benefits-list li { font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; color: #ddd; }
-.benefits-list li i { color: #44ffaa; }
-
-.urgency-text { font-size: 12px; font-style: italic; color: #bbb; margin-bottom: 20px; }
-
-.pay-now-btn {
-    background: #fff;
-    color: #111;
-    display: block;
-    text-align: center;
-    padding: 15px;
-    border-radius: 15px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s;
-}
-
-.pay-now-btn:hover { background: #44ffaa; transform: scale(1.02); }
-
-/* Payment Portal (QR Section) */
-.payment-portal-section {
+/* --- Overlay Background (Dhundla background) --- */
+.payment-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 600px;
-    margin-top: 100px;
-    scroll-margin-top: 100px; /* Navbar height + extra space */
-    padding-bottom: 100px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Blackish transparent */
+    backdrop-filter: blur(8px); /* Modern blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Isse navbar ke bhi upar aayega */
+    padding: 20px;
 }
 
-.qr-container {
+/* --- Modal Box --- */
+.payment-modal {
     background: white;
-    border-radius: 40px;
+    width: 100%;
+    max-width: 450px;
     padding: 40px;
-    text-align: center;
-    border: 1px solid #e1e8ff;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-}
-
-.qr-placeholder {
-    width: 220px;
-    height: 220px;
-    background: #f9f9f9;
-    margin: 30px auto;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 40px;
     position: relative;
-    border: 2px dashed #0044ff;
+    text-align: center;
+    animation: slideUp 0.4s ease-out;
 }
 
-.qr-placeholder img { width: 100%; height: 100%; }
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Close Button */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: #f0f0f0;
+    border: none;
+    font-size: 28px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 40px;
+}
+
+.close-modal:hover { background: #ff3e3e; color: white; }
+
+/* QR and Other Styles */
+.qr-placeholder {
+    width: 200px;
+    height: 200px;
+    margin: 25px auto;
+    border: 2px solid #0044ff;
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.qr-placeholder img { width: 100%; }
 
 .qr-scan-line {
     position: absolute;
-    width: 100%; height: 2px;
+    width: 90%; height: 2px;
     background: #0044ff;
-    top: 0; left: 0;
+    left: 5%;
+    top: 0;
     box-shadow: 0 0 10px #0044ff;
     animation: scan 2s linear infinite;
 }
 
 @keyframes scan {
-    0% { top: 0; }
-    100% { top: 100%; }
+    0% { top: 10%; }
+    100% { top: 90%; }
 }
 
-.upi-details {
-    background: #f4f7ff;
+.pay-now-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    color: #111;
     padding: 15px;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.pay-now-btn:hover { background: #44ffaa; }
+
+.upi-details {
+    background: #f8f9ff;
+    padding: 12px 20px;
     border-radius: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    font-size: 14px;
+    border: 1px solid #e1e8ff;
 }
 
 .copy-btn {
     background: #0044ff;
     color: white;
     border: none;
-    padding: 5px 15px;
+    padding: 5px 12px;
     border-radius: 8px;
     cursor: pointer;
-}
-
-.payment-footer { border-top: 1px solid #eee; padding-top: 20px; color: #888; font-size: 14px; }
-.payment-icons { font-size: 24px; display: flex; gap: 20px; justify-content: center; margin-top: 10px; }
-
-/* Desktop Adjustment for side-by-side */
-@media (min-width: 993px) {
-    .small-card { padding: 15px 25px; border-radius: 20px; }
-    .small-icon { width: 40px; height: 40px; font-size: 18px; }
 }
