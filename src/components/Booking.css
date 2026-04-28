@@ -1,144 +1,125 @@
+/* Purane styles wese hi hain, ye naye additions hain */
+
 .booking-section-white {
-    /* Padding-top ko 80px se kam karke 40px kar diya hai */
-    padding: 20px 5% 80px 5%; 
-    background-color: #f4f7ff; 
-    display: flex;
-    justify-content: center;
-}
-
-.booking-container-new {
-    width: 100%;
-    max-width: 1300px;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 40px;
+    flex-direction: column; /* Taaki portal niche aaye */
     align-items: center;
 }
 
-/* --- WHATSAPP CARD --- */
-.booking-card-white {
-    background: #ffffff;
-    border-radius: 50px;
-    /* Padding thodi adjust ki hai taaki card bulky na lage */
-    padding: 50px 40px; 
-    box-shadow: 0 20px 60px rgba(0, 68, 255, 0.08);
-    border: 1px solid #e1e8ff;
+/* Payment Card Styling */
+.payment-card-premium {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    border-radius: 35px;
+    padding: 30px;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     position: relative;
-    transition: 0.4s;
+    overflow: hidden;
 }
 
-.status-badge-blue {
-    background: #eff4ff;
-    color: #0044ff;
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-size: 13px;
+.hot-deal-tag {
+    background: #ff3e3e;
+    font-size: 10px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.payment-header h3 { font-size: 24px; margin: 10px 0; }
+
+.price-tag { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.old-price { text-decoration: line-through; color: #999; font-size: 18px; }
+.new-price { font-size: 32px; font-weight: 800; color: #44ffaa; }
+
+.benefits-list { list-style: none; padding: 0; margin-bottom: 20px; }
+.benefits-list li { font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; color: #ddd; }
+.benefits-list li i { color: #44ffaa; }
+
+.urgency-text { font-size: 12px; font-style: italic; color: #bbb; margin-bottom: 20px; }
+
+.pay-now-btn {
+    background: #fff;
+    color: #111;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    border-radius: 15px;
+    text-decoration: none;
     font-weight: 700;
+    transition: 0.3s;
+}
+
+.pay-now-btn:hover { background: #44ffaa; transform: scale(1.02); }
+
+/* Payment Portal (QR Section) */
+.payment-portal-section {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 100px;
+    scroll-margin-top: 100px; /* Navbar height + extra space */
+    padding-bottom: 100px;
+}
+
+.qr-container {
+    background: white;
+    border-radius: 40px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #e1e8ff;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+}
+
+.qr-placeholder {
+    width: 220px;
+    height: 220px;
+    background: #f9f9f9;
+    margin: 30px auto;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    border: 2px dashed #0044ff;
+}
+
+.qr-placeholder img { width: 100%; height: 100%; }
+
+.qr-scan-line {
+    position: absolute;
+    width: 100%; height: 2px;
+    background: #0044ff;
+    top: 0; left: 0;
+    box-shadow: 0 0 10px #0044ff;
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+.upi-details {
+    background: #f4f7ff;
+    padding: 15px;
+    border-radius: 15px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    width: fit-content;
     margin-bottom: 20px;
 }
 
-.live-dot-blue {
-    height: 10px; width: 10px;
+.copy-btn {
     background: #0044ff;
-    border-radius: 50%;
-    animation: pulse-blue 1.5s infinite;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-@keyframes pulse-blue { 
-    0% { transform: scale(0.9); opacity: 1; } 
-    70% { transform: scale(1.5); opacity: 0; } 
-    100% { transform: scale(0.9); opacity: 0; } 
-}
+.payment-footer { border-top: 1px solid #eee; padding-top: 20px; color: #888; font-size: 14px; }
+.payment-icons { font-size: 24px; display: flex; gap: 20px; justify-content: center; margin-top: 10px; }
 
-.title-blue { 
-    font-size: clamp(28px, 4vw, 40px); /* Responsive Font */
-    color: #111; 
-    font-weight: 800; 
-    margin-bottom: 15px; 
-}
-
-.desc-gray { 
-    color: #666; 
-    font-size: 16px; 
-    line-height: 1.6; 
-    margin-bottom: 30px; 
-}
-
-.whatsapp-btn-premium {
-    background: #0044ff;
-    color: #fff !important;
-    padding: 18px 35px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: fit-content;
-    transition: 0.3s;
-    box-shadow: 0 10px 30px rgba(0, 68, 255, 0.2);
-}
-
-.whatsapp-btn-premium:hover {
-    background: #0033cc;
-    transform: translateY(-5px);
-}
-
-.reply-text { display: block; margin-top: 15px; color: #999; font-size: 13px; }
-
-/* --- SOCIAL CARDS --- */
-.social-column-white {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.social-glass-card-white {
-    background: #ffffff;
-    border: 1px solid #eef2ff;
-    border-radius: 35px;
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    text-decoration: none;
-    transition: 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-}
-
-.icon-circle-insta, .icon-circle-fb {
-    width: 60px; height: 60px;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    color: #fff;
-}
-
-.icon-circle-insta { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-.icon-circle-fb { background: #0044ff; }
-
-.social-content-white h3 { color: #111; font-size: 20px; margin-bottom: 3px; }
-.social-content-white p { color: #777; font-size: 13px; }
-
-.arrow-icon { margin-left: auto; color: #ddd; transition: 0.3s; }
-
-.social-glass-card-white:hover {
-    transform: translateX(10px);
-    border-color: #0044ff;
-    box-shadow: 0 15px 40px rgba(0, 68, 255, 0.1);
-}
-
-/* --- MOBILE RESPONSIVE --- */
-@media (max-width: 992px) {
-    .booking-section-white { padding: 30px 5%; }
-    .booking-container-new { grid-template-columns: 1fr; gap: 30px; }
-    .title-blue { font-size: 28px; }
-    .booking-card-white { padding: 35px 25px; border-radius: 35px; }
+/* Desktop Adjustment for side-by-side */
+@media (min-width: 993px) {
+    .small-card { padding: 15px 25px; border-radius: 20px; }
+    .small-icon { width: 40px; height: 40px; font-size: 18px; }
 }
