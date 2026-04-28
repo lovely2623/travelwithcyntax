@@ -1,144 +1,131 @@
-.booking-section-white {
-    /* Padding-top ko 80px se kam karke 40px kar diya hai */
-    padding: 20px 5% 80px 5%; 
-    background-color: #f4f7ff; 
+/* Button Layout Adjustments */
+.booking-actions {
     display: flex;
-    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
-.booking-container-new {
-    width: 100%;
-    max-width: 1300px;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-/* --- WHATSAPP CARD --- */
-.booking-card-white {
-    background: #ffffff;
-    border-radius: 50px;
-    /* Padding thodi adjust ki hai taaki card bulky na lage */
-    padding: 50px 40px; 
-    box-shadow: 0 20px 60px rgba(0, 68, 255, 0.08);
-    border: 1px solid #e1e8ff;
-    position: relative;
-    transition: 0.4s;
-}
-
-.status-badge-blue {
-    background: #eff4ff;
-    color: #0044ff;
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-size: 13px;
+.pay-now-btn {
+    background: #ffcc00;
+    color: #000;
+    padding: 18px 35px;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 10px;
-    width: fit-content;
-    margin-bottom: 20px;
-}
-
-.live-dot-blue {
-    height: 10px; width: 10px;
-    background: #0044ff;
-    border-radius: 50%;
-    animation: pulse-blue 1.5s infinite;
-}
-
-@keyframes pulse-blue { 
-    0% { transform: scale(0.9); opacity: 1; } 
-    70% { transform: scale(1.5); opacity: 0; } 
-    100% { transform: scale(0.9); opacity: 0; } 
-}
-
-.title-blue { 
-    font-size: clamp(28px, 4vw, 40px); /* Responsive Font */
-    color: #111; 
-    font-weight: 800; 
-    margin-bottom: 15px; 
-}
-
-.desc-gray { 
-    color: #666; 
-    font-size: 16px; 
-    line-height: 1.6; 
-    margin-bottom: 30px; 
-}
-
-.whatsapp-btn-premium {
-    background: #0044ff;
-    color: #fff !important;
-    padding: 18px 35px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: fit-content;
     transition: 0.3s;
-    box-shadow: 0 10px 30px rgba(0, 68, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(255, 204, 0, 0.3);
 }
 
-.whatsapp-btn-premium:hover {
-    background: #0033cc;
+.pay-now-btn:hover {
+    background: #e6b800;
     transform: translateY(-5px);
 }
 
-.reply-text { display: block; margin-top: 15px; color: #999; font-size: 13px; }
-
-/* --- SOCIAL CARDS --- */
-.social-column-white {
+/* Modal Styling */
+.payment-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.social-glass-card-white {
-    background: #ffffff;
-    border: 1px solid #eef2ff;
-    border-radius: 35px;
-    padding: 25px;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
-    text-decoration: none;
-    transition: 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    z-index: 1000;
+    padding: 20px;
 }
 
-.icon-circle-insta, .icon-circle-fb {
-    width: 60px; height: 60px;
-    border-radius: 18px;
+.payment-modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 30px;
+    padding: 40px;
+    position: relative;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: none; border: none;
+    font-size: 30px; cursor: pointer; color: #999;
+}
+
+.urgency-tag {
+    background: #fff0f0;
+    color: #ff3b3b;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.modal-header h3 { font-size: 24px; margin-top: 15px; }
+.modal-header p { color: #666; font-size: 14px; margin-bottom: 25px; }
+
+.token-card {
+    background: #f8faff;
+    border: 2px dashed #0044ff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.token-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.old-price { text-decoration: line-through; color: #999; margin-right: 10px; }
+.new-price { font-size: 22px; color: #0044ff; font-weight: 800; }
+
+.benefits-list { list-style: none; padding: 0; margin: 0; }
+.benefits-list li { font-size: 13px; color: #444; margin-bottom: 8px; display: flex; gap: 8px; align-items: center; }
+.benefits-list i { color: #28a745; }
+
+.qr-section { text-align: center; }
+
+.qr-box {
+    width: 180px; height: 180px;
+    background: #eee;
+    margin: 0 auto 15px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
-    color: #fff;
+    border: 1px solid #ddd;
+    overflow: hidden;
 }
 
-.icon-circle-insta { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-.icon-circle-fb { background: #0044ff; }
-
-.social-content-white h3 { color: #111; font-size: 20px; margin-bottom: 3px; }
-.social-content-white p { color: #777; font-size: 13px; }
-
-.arrow-icon { margin-left: auto; color: #ddd; transition: 0.3s; }
-
-.social-glass-card-white:hover {
-    transform: translateX(10px);
-    border-color: #0044ff;
-    box-shadow: 0 15px 40px rgba(0, 68, 255, 0.1);
+.upi-details { display: flex; flex-direction: column; gap: 5px; }
+.upi-id { font-size: 16px; color: #111; letter-spacing: 1px; }
+.copy-btn { 
+    background: none; border: none; color: #0044ff; 
+    font-size: 12px; cursor: pointer; text-decoration: underline; 
 }
 
-/* --- MOBILE RESPONSIVE --- */
-@media (max-width: 992px) {
-    .booking-section-white { padding: 30px 5%; }
-    .booking-container-new { grid-template-columns: 1fr; gap: 30px; }
-    .title-blue { font-size: 28px; }
-    .booking-card-white { padding: 35px 25px; border-radius: 35px; }
+.secure-footer { 
+    margin-top: 25px; font-size: 12px; color: #999; 
+    text-align: center; border-top: 1px solid #eee; padding-top: 15px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .payment-modal-content { padding: 25px; }
+    .booking-actions { flex-direction: column; }
+    .pay-now-btn, .whatsapp-btn-premium { width: 100%; justify-content: center; }
 }
