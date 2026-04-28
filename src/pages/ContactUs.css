@@ -1,9 +1,7 @@
-/* Container & Base Fix */
 .contact-travel-wrapper {
-    margin-top: 75px; /* Navbar height (70px) + 5px buffer for spacing */
+    margin-top: 80px; /* Safe gap for 70px sticky navbar */
     background: #f8fafc;
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
 }
 
 .container {
@@ -12,127 +10,76 @@
     padding: 0 20px;
 }
 
-/* Hero Section - Better SEO Visibility */
 .contact-hero {
     background: linear-gradient(135deg, #0044ff 0%, #002288 100%);
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
     color: white;
 }
-.contact-hero h1 { 
-    font-size: clamp(24px, 5vw, 36px); /* Responsive font size */
-    font-weight: 700; 
-    margin-bottom: 15px;
-}
-.contact-hero p { 
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto;
-    opacity: 0.95; 
-}
 
-/* Grid Layout */
+.contact-hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+
 .contact-main-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 40px;
-    padding: 60px 20px;
+    gap: 30px;
+    padding: 50px 20px;
 }
 
-/* Info Cards */
-.contact-info-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 .c-card {
     background: white;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     text-align: center;
-    transition: transform 0.3s ease;
-}
-.c-card:hover { transform: translateY(-5px); }
-.c-icon { font-size: 32px; margin-bottom: 10px; }
-.c-card h3 { font-size: 18px; color: #0f172a; margin-bottom: 8px; }
-.c-card a { 
-    color: #0044ff; 
-    font-weight: 700; 
-    text-decoration: none; 
-    word-break: break-all;
+    margin-bottom: 20px;
 }
 
-/* Form Styling */
+.c-icon { font-size: 28px; margin-bottom: 10px; }
+.c-card a { color: #0044ff; font-weight: 700; text-decoration: none; }
+
 .contact-form-container {
     background: white;
-    padding: 45px;
-    border-radius: 30px;
-    box-shadow: 0 15px 50px rgba(0, 68, 255, 0.08);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
-.contact-form-container h2 { margin-bottom: 30px; font-size: 26px; color: #0f172a; }
 
-.travel-form { display: flex; flex-direction: column; gap: 18px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.travel-form { display: flex; flex-direction: column; gap: 15px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
 .travel-form input, .travel-form select, .travel-form textarea {
-    width: 100%;
-    padding: 14px 18px;
+    padding: 12px 15px;
     border: 1px solid #e2e8f0;
-    border-radius: 12px;
+    border-radius: 10px;
     font-size: 15px;
-    background: #f8fafc;
-    transition: 0.3s;
-}
-
-.travel-form input:focus, .travel-form select:focus, .travel-form textarea:focus {
-    outline: none;
-    border-color: #0044ff;
-    background: #fff;
-    box-shadow: 0 0 0 4px rgba(0, 68, 255, 0.1);
+    background: #fcfdfe;
 }
 
 .wa-submit-btn {
-    background: #25D366; /* WhatsApp Green for better UX */
+    background: #25D366;
     color: white;
     border: none;
-    padding: 18px;
-    border-radius: 12px;
-    font-size: 17px;
-    font-weight: 700;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-}
-.wa-submit-btn:hover { 
-    background: #1eb954; 
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
-.wa-submit-btn:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-}
+.wa-submit-btn:hover { background: #1eb954; transform: scale(1.01); }
 
-/* Map Section */
-.google-map-wrap { margin-top: 40px; line-height: 0; }
-
-/* --- RESPONSIVE FIXES --- */
+/* Mobile Responsive */
 @media (max-width: 992px) {
-    .contact-main-grid { 
-        grid-template-columns: 1fr; 
-        padding: 40px 15px;
-    }
+    .contact-main-grid { grid-template-columns: 1fr; }
     .contact-info-panel { order: 2; }
-    .contact-form-container { order: 1; padding: 30px 25px; }
+    .contact-form-container { order: 1; padding: 25px; }
 }
 
 @media (max-width: 600px) {
-    .contact-travel-wrapper { margin-top: 70px; } /* Mobile Navbar Adjust */
+    .contact-travel-wrapper { margin-top: 70px; } /* Mobile adjustment */
     .form-row { grid-template-columns: 1fr; }
-    .contact-hero { padding: 60px 15px; }
-    .contact-hero h1 { font-size: 26px; }
-    .contact-form-container { padding: 25px 15px; border-radius: 20px; }
-    .wa-submit-btn { font-size: 15px; padding: 15px; }
+    .contact-hero h1 { font-size: 1.6rem; }
+    .contact-form-container { padding: 20px; }
 }
