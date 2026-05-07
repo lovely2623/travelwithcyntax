@@ -12,13 +12,14 @@ const ScratchCard = () => {
     // --- यहाँ से तुम ऑप्शंस बदल सकते हो (Total 8 होने चाहिए) ---
     const wheelOptions = [
         "FREE Kufri Trip", 
-        "Chadwick Fall", 
-        "Sankat Mochan", 
-        "Jakhu Trip", 
-        "IIAS Trip", 
-        "Annandale Trip", 
-        "₹500 Cashback", 
-        "Hard Luck"
+        "FREE Chadwick Fall", 
+        "FREE Sankat Mochan", 
+        "FREE Jakhu Trip", 
+        "FREE IIAS Trip", 
+        "FREE Annandale Trip", 
+        "₹101 Cashback", 
+        "₹201 Cashback",
+        
     ];
 
     useEffect(() => {
@@ -70,14 +71,14 @@ const ScratchCard = () => {
         <div className="cyntax-spin-page">
             <div className="spin-main-content">
                 <header className="spin-header">
-                    <h1 className="brand-title">Travel with <span className="red-accent">Cyntax</span></h1>
+                    <h1 className="brand-title">Game with <span className="red-accent">Cyntax</span></h1>
                     <p className="sub-tag">Spin the Wheel & Explore Shimla for Free!</p>
                     
                     {!isVerified ? (
                         <form className="phone-auth-form" onSubmit={handleVerify}>
                             <input 
                                 type="number" 
-                                placeholder="WhatsApp Number to Unlock" 
+                                placeholder="Enter WhatsApp Number to Unlock" 
                                 value={mobile}
                                 onChange={(e) => setMobile(e.target.value)}
                                 required
