@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './SpinWheel.css';
+import './ScratchCard.css';
 
 const ScratchCard = () => {
     const [mobile, setMobile] = useState("");
