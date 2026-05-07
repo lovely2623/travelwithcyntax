@@ -11,6 +11,7 @@ import TourPackages from './pages/TourPackages';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import Gallery from './pages/Gallery';
+import ScratchCard from './components/ScratchCard';
 
 // Scroll To Top Logic (Har page change par screen upar chali jaye)
 const ScrollToTop = () => {
@@ -26,6 +27,7 @@ const ScrollToTop = () => {
 function Home() {
   return (
     <>
+    <ScratchCard />
       <TrendingDestinations />
         < WhyTrustUs />
       <Booking />

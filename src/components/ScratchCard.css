@@ -1,0 +1,108 @@
+.scratch-container {
+  margin-top: 90px; /* Navbar space + 10px gap */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 300px;
+}
+
+.scratch-wrapper {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  border: 2px dashed #007bff;
+}
+
+.offer-title {
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+}
+
+.canvas-area {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  margin: 0 auto;
+  cursor: crosshair;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.reward-underneath {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff9e6;
+  color: #d4a017;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px;
+  border: 2px solid #ffd700;
+  z-index: 1;
+}
+
+.scratch-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.congrats-msg {
+  margin-top: 15px;
+  color: #28a745;
+  font-weight: bold;
+  animation: bounce 1s infinite;
+}
+
+.already-played {
+  padding: 20px;
+  background: #f8d7da;
+  border-radius: 10px;
+  color: #721c24;
+}
+
+.reward-text-final {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 10px 0;
+  color: #007bff;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .scratch-wrapper {
+    padding: 20px;
+    width: 90%;
+  }
+  .canvas-area, .scratch-canvas {
+    width: 260px !important;
+  }
+  .reward-underneath {
+    font-size: 1rem;
+  }
+}
