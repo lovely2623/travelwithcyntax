@@ -1,62 +1,90 @@
 /* ScratchCard.css */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
-.cyntax-main-wrapper {
-    margin-top: 100px; /* Adjust for your 100px Sticky Navbar */
-    min-height: calc(100vh - 100px);
-    background: #020c1b;
-    color: #ccd6f6;
-    padding: 40px 20px;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.cyntax-outer-container {
+    margin-top: 80px; /* Adjust for your 80px Sticky Navbar */
+    min-height: calc(100vh - 80px);
+    background-color: #f9f9f9; /* Whitish Background */
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    padding: 40px 15px;
 }
 
-.neon-text {
-    color: #64ffda;
-    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+.game-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.game-header {
+.header-section {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
-.game-header h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.brand-name { font-size: 2.5rem; font-weight: 800; color: #1a1a1a; margin-bottom: 5px; }
+.brand-name .highlight { color: #ff4757; }
+.tagline { color: #777; font-size: 1.1rem; }
+
+/* Verification Box */
+.verify-box {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-.game-container {
+.verify-box input {
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    width: 250px;
+}
+
+.verify-box button {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.unlocked-msg {
+    margin-top: 20px;
+    color: #2ed573;
+    font-weight: bold;
+}
+
+/* Games Grid */
+.games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    width: 100%;
-    max-width: 1100px;
+    transition: 0.5s;
 }
 
-.card-box {
-    background: #112240;
+.games-grid.locked {
+    opacity: 0.3;
+    pointer-events: none;
+    filter: blur(4px);
+}
+
+.game-card {
+    background: white;
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid #233554;
-    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+    text-align: center;
 }
 
-.card-title {
-    font-size: 1.4rem;
-    margin-bottom: 25px;
-    color: #e6f1ff;
-    letter-spacing: 2px;
-}
+.game-card h3 { margin-bottom: 20px; color: #444; }
 
-/* Scratch Card Styling */
+/* Scratch Card */
 .scratch-pad {
     position: relative;
     width: 280px;
@@ -64,127 +92,90 @@
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
+    border: 2px dashed #ff4757;
 }
 
-.scratch-content {
-    background: #e6f1ff;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #0a192f;
+.reward-layer {
+    background: #fff3f3;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
 }
 
-.scratch-content h3 { font-size: 1.2rem; color: #007bff; margin-top: 5px; }
+.congrats { font-size: 0.8rem; color: #ff4757; font-weight: bold; }
+.reward-val { font-size: 1.3rem; font-weight: 800; margin: 10px 0; color: #2f3542; }
 
-.scratch-cover {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, #233554 25%, #112240 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.cover-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #747d8c, #2f3542);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 2; transition: 0.6s;
 }
 
-.scratch-pad.revealed .scratch-cover { transform: translateY(-100%); }
+.cover-layer p { color: white; font-weight: bold; letter-spacing: 2px; }
+.scratch-pad.revealed .cover-layer { transform: translateX(100%); }
 
-/* Spin Wheel Styling */
-.wheel-wrapper {
+/* Spin Wheel */
+.wheel-box {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 280px; height: 280px;
 }
 
-.the-wheel {
-    width: 100%;
-    height: 100%;
+.wheel-graphic {
+    width: 100%; height: 100%;
     border-radius: 50%;
-    border: 8px solid #233554;
+    border: 5px solid #2f3542;
     position: relative;
     overflow: hidden;
-    transition: transform 4s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: transform 4s cubic-bezier(0, 0, 0, 1);
 }
 
-.wheel-segment {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    background: #112240;
+.segment {
+    position: absolute; width: 50%; height: 50%;
+    background: #ffa502;
     transform-origin: 100% 100%;
     transform: rotate(calc(45deg * var(--i))) skewY(-45deg);
-    border: 1px solid #233554;
+    border: 0.5px solid #fff;
 }
 
-.wheel-segment span {
-    position: absolute;
-    left: 20px;
-    top: 40px;
+.segment:nth-child(even) { background: #ff7f50; }
+
+.segment span {
+    position: absolute; left: 10px; top: 20px;
     transform: skewY(45deg) rotate(22deg);
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: #64ffda;
-    width: 80px;
+    font-size: 0.65rem; font-weight: bold; color: white;
 }
 
-.wheel-pointer {
-    position: absolute;
-    top: -15px;
-    left: 50%;
+.pointer {
+    position: absolute; top: -10px; left: 50%;
     transform: translateX(-50%);
-    width: 30px;
-    height: 30px;
-    background: #64ffda;
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    width: 25px; height: 25px;
+    background: #ff4757; clip-path: polygon(50% 100%, 0 0, 100% 0);
     z-index: 10;
 }
 
-.spin-btn {
-    position: absolute;
-    top: 50%; left: 50%;
+.center-spin {
+    position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px; height: 60px;
-    background: #0a192f;
-    border: 3px solid #64ffda;
-    color: #64ffda;
-    border-radius: 50%;
-    cursor: pointer;
-    font-weight: bold;
-    z-index: 11;
-    box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+    width: 50px; height: 50px;
+    background: white; border: 3px solid #2f3542;
+    border-radius: 50%; cursor: pointer; font-weight: 800; z-index: 11;
 }
 
-.played-status {
-    padding: 20px;
-    background: rgba(100, 255, 218, 0.1);
-    color: #64ffda;
-    border: 1px dashed #64ffda;
-    border-radius: 10px;
+/* WhatsApp Button */
+.wa-btn, .claim-now {
+    background: #25D366;
+    color: white; border: none;
+    padding: 10px 20px; border-radius: 5px;
+    font-weight: bold; cursor: pointer;
+    margin-top: 10px;
 }
 
-.popup-notif {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #64ffda;
-    color: #0a192f;
-    padding: 15px 25px;
-    border-radius: 50px;
-    font-weight: bold;
-    animation: slideIn 0.5s ease-out;
-}
+.take-ss { margin-top: 15px; font-size: 0.85rem; color: #ff4757; font-weight: bold; }
 
-@keyframes slideIn {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
-}
-
-/* Mobile Adjustments */
-@media (max-width: 480px) {
-    .game-header h1 { font-size: 1.8rem; }
-    .wheel-wrapper { width: 250px; height: 250px; }
-    .scratch-pad { width: 250px; }
+/* Mobile */
+@media (max-width: 600px) {
+    .verify-box { flex-direction: column; align-items: center; }
+    .verify-box input { width: 90%; }
+    .brand-name { font-size: 1.8rem; }
 }
