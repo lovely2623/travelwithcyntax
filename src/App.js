@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Mini from './components/Mini';
 import TrendingDestinations from './components/TrendingDestinations';
 import Booking from './components/Booking';
 import WhyTrustUs from './components/WhyTrustUs';
@@ -45,7 +44,7 @@ function App() {
       <ScrollToTop />
 
       <div>
-      <Mini />
+    
       <Navbar /> 
 
  <Routes>
