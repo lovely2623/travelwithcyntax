@@ -1,5 +1,5 @@
-.tour-wrapper { padding: 80px 5%; background: #f8faff; }
-.tour-intro { text-align: center; margin-bottom: 60px; }
+.tour-wrapper { padding: 80px 5%; background: #f8faff; margin-top: 100px; }
+.tour-intro { text-align: center; margin-bottom: 60px; margin-top: 100px; }
 .gold-badge { color: #0044ff; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; }
 .tour-intro h2 { font-size: clamp(28px, 4vw, 38px); color: #0f172a; margin: 10px 0; }
 
