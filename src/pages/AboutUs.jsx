@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
-import directorImg from '../assets/images/me.jpeg'; 
+import directorImg from '../assets/images/me.jpg'; 
 
 function AboutUs() {
   const handleWhatsApp = () => {
