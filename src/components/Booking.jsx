@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './Booking.css';
+ import scanner from '../assets/images/scanner.jpeg'; 
 
 function Booking() {
   const whatsappNumber = "8988199226";
   const message = "Hi Cyntax, I want to book a Himachal Couple Tour. Please share details.";
   
   // Replace with your actual UPI ID and QR Image URL
-  const upiId = "8988199226@paytm"; 
-  const qrImageUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=" + upiId;
+  const upiId = "mtthakur.786.mt@oksbi"; 
 
   return (
     <section className="booking-section-white">
@@ -43,7 +43,7 @@ function Booking() {
                 <h3 className="pay-title">Reservation Token</h3>
                 <div className="price-tag">
                   <span className="old-price">₹2,000</span>
-                  <span className="new-price">₹999</span>
+                  <span className="new-price">₹599</span>
                 </div>
                 <p className="pay-desc">High season fills up fast. If we've finalized your plan, secure your spot now with a fully refundable token deposit.</p>
                 
@@ -60,7 +60,7 @@ function Booking() {
 
               <div className="qr-wrapper">
                 <div className="qr-box">
-                    <img src={qrImageUrl} alt="Payment QR Code" />
+                    <img src={scanner} alt="Payment QR Code" />
                     <p>Scan to Pay</p>
                 </div>
               </div>
