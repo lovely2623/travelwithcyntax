@@ -6,7 +6,7 @@ import logo from '../assets/images/logo.png';
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [currentTime, setCurrentTime] = useState(new Date()); // Time State
+  const [currentTime, setCurrentTime] = useState(new Date()); 
   const navigate = useNavigate();
 
   const isAuthenticated = localStorage.getItem('isAdminAuthenticated') === 'true';
@@ -70,7 +70,7 @@ function Navbar() {
             </div>
         </div>
 
-        {/* Live Time - Hamesha Right End mein rahega */}
+        {/* Live Time - Right Margin added via CSS */}
         <div className='live-time'>
           <i className="far fa-clock"></i>
           <span>{formatTime(currentTime)}</span>
@@ -95,8 +95,15 @@ function Navbar() {
             <li><NavLink to="/AboutUs" onClick={closeMenu}>About Us</NavLink></li>
             <li><NavLink to="/ContactUs" onClick={closeMenu}>Contact Us</NavLink></li>
             <li><NavLink to="/Gallery" onClick={closeMenu}>Gallery</NavLink></li>
-
             
+            {/* Admin Logout Button if Authenticated */}
+            {isAuthenticated && (
+              <li>
+                <button className="nav-logout-btn-premium" onClick={handleLogout}>
+                  Logout
+                </button>
+              </li>
+            )}
           </ul>
         </div>
       </nav>
