@@ -155,11 +155,12 @@
 
 .qr-box {
     background: white;
-    padding: 15px;
+    padding: 10px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     text-align: center;
     border: 1px solid #eee;
+    height: 100px;
 }
 
 .qr-box img { width: 140px; height: 140px; border-radius: 10px; }
