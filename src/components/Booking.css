@@ -160,10 +160,11 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     text-align: center;
     border: 1px solid #eee;
-    height: 400px;
+    height: 280px;
+    width: 250px;
 }
 
-.qr-box img { width: 140px; height: 140px; border-radius: 10px; }
+.qr-box img { width: 200px; height: 250px; border-radius: 10px; }
 .qr-box p { margin-top: 10px; font-weight: 700; font-size: 12px; color: #333; }
 
 /* --- SOCIAL CARDS (Existing) --- */
