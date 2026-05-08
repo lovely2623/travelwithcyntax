@@ -14,6 +14,7 @@ import manali from '../assets/images/manali.avif';
 import pal from '../assets/images/palampur.jpg';
 import sol from '../assets/images/solan.webp';
 import spiti from '../assets/images/spiti.avif';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -80,7 +81,9 @@ function TrendingDestinations() {
                 <p>{item.tagline}</p>
                 <div className="card-footer-luxury">
                    <span><i className="fas fa-map-marker-alt"></i> Himachal</span>
-                   <button className="mini-view-btn">Explore</button>
+                  <NavLink style={{textDecoration: 'none'}} to="/tours" >
+                  <button className="mini-view-btn">Explore</button>
+                  </NavLink>
                 </div>
               </div>
             </div>
