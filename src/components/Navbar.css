@@ -257,7 +257,7 @@
     .live-time {
         margin-left: auto; /* Time ko extreme right push karne ke liye */
         background: none; /* Mobile par clean look ke liye */
-        padding: 20px 0px;
+        padding: 0px 20px;
     }
 }
 
