@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Gallery.css';
 
+// Images Import
 import shimla from '../assets/images/shimla.avif';
 import church from '../assets/images/church.avif';
 import iias from '../assets/images/iias.avif';
@@ -15,18 +16,18 @@ import sol from '../assets/images/solan.webp';
 import spiti from '../assets/images/spiti.avif';
 
 const galleryImages = [
-  { id: 1, src: 'shimla', category: 'Shimla', title: 'The Ridge, Shimla' },
-  { id: 2, src: '', category: 'Manali', title: 'Snowy Solang Valley' },
-  { id: 3, src: '', category: 'Spiti', title: 'Key Monastery' },
-  { id: 4, src: '', category: 'Offbeat', title: 'Chanshal Pass Clouds' },
-  { id: 5, src: '', category: 'Dalhousie', title: 'Khajjiar Meadows' },
-  { id: 6, src: '', category: 'Spiritual', title: 'Jakhu Temple View' },
-  { id: 7, src: '', category: 'Shimla', title: 'Toy Train Heritage' },
-  { id: 8, src: '', category: 'Dharamshala', title: 'HPCA Cricket Stadium' },
-  { id: 9, src: '', category: 'Offbeat', title: 'Pabbar Valley Rohru' },
-  { id: 10, src: '', category: 'Spiritual', title: 'Mata Chintpurni Way' },
-  { id: 11, src: '', category: 'Manali', title: 'Rohtang Pass Snow' },
-  { id: 12, src: '', category: 'Spiti', title: 'Langza Buddha Statue' }
+  { id: 1, src: shimla, category: 'Shimla', title: 'The Ridge, Shimla' },
+  { id: 2, src: manali, category: 'Manali', title: 'Snowy Solang Valley' },
+  { id: 3, src: spiti, category: 'Spiti', title: 'Key Monastery' },
+  { id: 4, src: Chanshal, category: 'Offbeat', title: 'Chanshal Pass Clouds' },
+  { id: 5, src: chamba, category: 'Offbeat', title: 'Khajjiar Meadows (Chamba)' },
+  { id: 6, src: jakhu, category: 'Spiritual', title: 'Jakhu Temple View' },
+  { id: 7, src: church, category: 'Shimla', title: 'Christ Church Heritage' },
+  { id: 8, src: iias, category: 'Shimla', title: 'IIAS Viceregal Lodge' },
+  { id: 9, src: kullu, category: 'Offbeat', title: 'Kullu Valley Bliss' },
+  { id: 10, src: bag, category: 'Spiritual', title: 'Mata Baglamukhi Temple' },
+  { id: 11, src: pal, category: 'Offbeat', title: 'Tea Gardens Palampur' },
+  { id: 12, src: sol, category: 'Offbeat', title: 'Solan Hills' }
 ];
 
 function Gallery() {
@@ -78,7 +79,7 @@ function Gallery() {
       <section className="gallery-footer-cta">
         <h2>Like what you see?</h2>
         <p>In haseen waadiyon mein aapka swagat hai. Aaj hi apna trip plan karein.</p>
-        <button onClick={() => window.open('https://wa.me/918988199226', '_blank')}>
+        <button className="wa-contact-btn" onClick={() => window.open('https://wa.me/918988199226', '_blank')}>
           <i className="fab fa-whatsapp"></i> Chat with Mohit Sir
         </button>
       </section>
