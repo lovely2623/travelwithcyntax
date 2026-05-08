@@ -255,7 +255,8 @@
     }
 
     .live-time {
-        margin-left: auto; /* Time ko extreme right push karne ke liye */
+        margin-left: 10px; /* Time ko extreme right push karne ke liye */
+        margin-right: 10px;
         background: none; /* Mobile par clean look ke liye */
         padding-left:20px;
     }
